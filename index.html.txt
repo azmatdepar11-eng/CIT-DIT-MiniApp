@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CIT & DIT Mini App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      padding: 30px;
+    }
+    h1 {
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: block;
+      margin: 15px auto;
+      padding: 15px;
+      width: 80%;
+      max-width: 300px;
+      font-size: 18px;
+      background: #2563eb;
+      border: none;
+      border-radius: 12px;
+      color: white;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #1e40af;
+    }
+    .course {
+      display: none;
+      text-align: left;
+      max-width: 500px;
+      margin: auto;
+    }
+    ul {
+      line-height: 1.8;
+    }
+    .back {
+      background: #16a34a;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="home">
+    <h1>📘 CIT & 📗 DIT Mini App</h1>
+    <button class="btn" onclick="openCIT()">CIT Course</button>
+    <button class="btn" onclick="openDIT()">DIT Course</button>
+  </div>
+
+  <div class="course" id="cit">
+    <h2>📘 CIT Course (Step by Step)</h2>
+    <ul>
+      <li>Introduction to Computer</li>
+      <li>MS Word Basics</li>
+      <li>MS Excel Basics</li>
+      <li>MS PowerPoint</li>
+      <li>Internet & Email</li>
+      <li>Canva Graphic Design</li>
+      <li>Final Quiz & Certificate</li>
+    </ul>
+    <button class="btn back" onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <div class="course" id="dit">
+    <h2>📗 DIT Course (Advanced)</h2>
+    <ul>
+      <li>Computer Networking</li>
+      <li>Web Development (HTML, CSS)</li>
+      <li>JavaScript Basics</li>
+      <li>Database (MySQL)</li>
+      <li>Graphic Designing Advanced</li>
+      <li>Freelancing & Earning</li>
+      <li>Final Project & Certificate</li>
+    </ul>
+    <button class="btn back" onclick="goHome()">⬅ Back</button>
+  </div>
+
+  <script>
+    function openCIT() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('cit').style.display = 'block';
+    }
+    function openDIT() {
+      document.getElementById('home').style.display = 'none';
+      document.getElementById('dit').style.display = 'block';
+    }
+    function goHome() {
+      document.getElementById('cit').style.display = 'none';
+      document.getElementById('dit').style.display = 'none';
+      document.getElementById('home').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+require('dotenv').config();
+const TelegramBot = require('node-telegram-bot-api');
+
+const token = process.env.TELEGRAM_TOKEN;
+const miniAppURL = process.env.MINI_APP_URL;
+const bot = new TelegramBot(token, { polling: true });
+
+bot.onText(/\/start/, (msg) => {
+    const chatId = msg.chat.id;
+    bot.sendMessage(chatId, "Welcome to CIT & DIT Mini App!\nClick below to start:", {
+        reply_markup: {
+            inline_keyboard: [
+                [{ text: "Open Mini App", url: miniAppURL }]
+            ]
+        }
+    });
+});
+
+console.log('Bot is running...');
